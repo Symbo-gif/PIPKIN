@@ -1,0 +1,17 @@
+---
+description: TDD order, coverage floors, and test naming for PipKin
+globs: "**/{*Test.kt,*Tests.kt,*Spec.kt}"
+alwaysApply: false
+---
+
+# Testing standards
+
+- Write tests before production code. Confirm red. Commit tests. Then implement. Do not edit the committed tests to make them pass.
+- Test names state the behavior: `hunger_decays_correctly_after_72_hour_offline_gap_with_cap_applied`.
+- `:core` decay, evolution, and offline catch-up: ≥ 90% line coverage.
+- U3 offline reconciliation requires property-based / fuzz tests (variable gaps, caps, meter floors/ceilings).
+- Room DAOs need round-trip integration tests. WorkManager needs scheduling tests. Critical Compose flows need instrumented tests.
+- No tautological tests (asserting a stub returns what the stub was written to return).
+- New audit findings get a regression test that fails before the fix.
+
+Commits: `test: add failing tests for Uxx` then `feat: implement Uxx`. Remediation: `test: regress <finding-id>` then `fix: <finding-id>`.

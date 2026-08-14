@@ -1,0 +1,38 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android / local
+local.properties
+*.iml
+.idea/
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Secrets
+google-services.json
+*.jks
+*.keystore
+secrets.properties
+.env
+.env.*
+
+# Kotlin
+.kotlin/
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Agent / editor
+*.swp
+*.swo
+.cursor/*.log

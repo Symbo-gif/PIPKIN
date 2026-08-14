@@ -1,0 +1,17 @@
+---
+description: PipKin Android layering — core vs app, Compose, WorkManager
+globs: "**/*.{kt,kts}"
+alwaysApply: false
+---
+
+# Android architecture
+
+- `:core` is a JVM Kotlin module. Zero Android imports (`android.*`, `androidx.*` except none).
+- `:app` owns Room, WorkManager, AlarmManager, notifications, Compose, Firebase.
+- Unidirectional data: UI event → ViewModel/use case → `:core` engine → new `PetState` → persist → UI state.
+- WorkManager for periodic reconciliation. AlarmManager only for time-critical alerts that WorkManager cannot guarantee.
+- Compose screens are stateless where possible. Hold UI state in ViewModels. Navigation stays in `:app` ui.
+- Background work and notification code must be testable without starting the full Activity graph.
+- Main thread: no Room queries, no file I/O, no catch-up simulation loops.
+
+Layer check: if a Composable imports `com.pipkin.core.simulation`, the boundary is already broken — inject a ViewModel instead.

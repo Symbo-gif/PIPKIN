@@ -1,0 +1,23 @@
+---
+description: Kotlin style for PipKin — naming, structure, no leaks across modules
+globs: "**/*.{kt,kts}"
+alwaysApply: false
+---
+
+# Kotlin style
+
+- Kotlin official style + ktlint. 4-space indent. No wildcard imports.
+- Prefer `val`, data classes, and exhaustive `when`. Avoid `Any` and unchecked casts.
+- Public `:core` APIs get KDoc. Internal implementation stays `internal` unless a test in another package needs it.
+- Domain types (`PetState`, `CareEvent`, `EvolutionBranch`) live in `:core`. Room `*Entity` types live in `:app`.
+- Do not put simulation math in Compose, ViewModels, Workers, or DAOs.
+- Coroutines for async. No `GlobalScope`. ViewModel/UseCase owners use `viewModelScope` or an injected scope.
+- Errors: fail loud in `:core` with typed results or exceptions that `:app` maps to UI. Never swallow.
+
+```kotlin
+// BAD — math in UI
+Button(onClick = { pet.hunger = (pet.hunger - 2).coerceAtLeast(0) })
+
+// GOOD — UI dispatches, core computes
+Button(onClick = { viewModel.onFeed() })
+```

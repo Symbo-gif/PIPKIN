@@ -1,0 +1,15 @@
+---
+description: PipKin security and robustness — saves, secrets, notifications
+globs: "**/*.{kt,kts,xml,properties}"
+alwaysApply: false
+---
+
+# Security
+
+- Never commit secrets, keystores, or `google-services.json`. Use local / CI secrets.
+- Treat save files and Room rows as untrusted. Corrupt or future-schema data must fail closed (load defaults or show recovery), not crash-loop.
+- Validate meter ranges (0–100) on load. Clamp or reject; do not simulate from NaN/negative timestamps.
+- Last-tick timestamps must be in the past or now. Future timestamps are corrupt input.
+- Notifications: no API keys in payloads; no PII in analytics beyond what `docs/build-plan.md` lists. U12 events are schema-locked.
+- Live Updates and standard notifications must be actionable and non-spammy. No repeating the same non-actionable ping.
+- Debug logging must not print full save blobs in release builds.

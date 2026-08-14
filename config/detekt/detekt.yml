@@ -1,0 +1,21 @@
+build:
+  maxIssues: 0
+
+complexity:
+  LongParameterList:
+    active: true
+    threshold: 8
+  LongMethod:
+    active: true
+    threshold: 60
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated:
+      - Composable
+
+style:
+  MagicNumber:
+    active: false
+  WildcardImport:
+    active: true
