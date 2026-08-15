@@ -43,10 +43,10 @@ Unit-specific focus:
 
 ## Exit criteria
 
-- [ ] Plan written before edits
-- [ ] Separate test then feat commits
-- [ ] Spec tests named by behavior
+- [x] Plan written before edits
+- [x] Separate test then feat commits
+- [x] Spec tests named by behavior
 - [ ] CI green
-- [ ] Roadmap stage for U01 = Coding (ready for Session 2)
+- [x] Roadmap stage for U01 = Coding (ready for Session 2)
 
 Next: `02-audit.md` in a **different** agent session.
