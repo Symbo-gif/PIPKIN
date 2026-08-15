@@ -1,0 +1,13 @@
+---
+description: CI and local toolchain gotchas from U00 — gradlew, SDK pins, merge gate job
+globs: "**/{gradlew,gradle/**,*.gradle.kts,.github/workflows/**}"
+alwaysApply: false
+---
+
+# CI and environment
+
+- Toolchain pins: `gradle/libs.versions.toml` and `docs/build-plan.md` §4 (compileSdk/targetSdk 36, AGP 8.9.1, Gradle 8.11.1).
+- After adding or regenerating `gradlew`, ensure executable bit for Linux CI: `git update-index --chmod=+x gradlew`.
+- PR status check that blocks merge: CI job **`verify`** only. **`instrumented`** is a placeholder until U13.
+- Local Android builds need `local.properties` with `sdk.dir` (gitignored). CI uses `android-actions/setup-android`.
+- Do not commit `google-services.json`, API keys, or secrets.

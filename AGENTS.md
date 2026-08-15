@@ -39,6 +39,15 @@ Do not change these without updating `docs/build-plan.md` and logging the change
 - Room entities: `*Entity`. Domain models: no suffix (`PetState`, `HistoryLog`). DAOs: `*Dao`.
 - Feature branches: `feature/Uxx-short-name` (example: `feature/U02-simulation-engine`).
 
+## Environment / CI
+
+Ground truth for SDK and toolchain versions: `docs/build-plan.md` §4 and `gradle/libs.versions.toml`.
+
+- compileSdk / targetSdk **36** requires AGP **8.9.1** and Gradle **8.11.1** (wrapper in repo).
+- `gradlew` must be **executable** in git (`git update-index --chmod=+x gradlew`) so Linux CI can run `./gradlew`; Windows clones may omit the bit and break the first Actions run.
+- PR merge gate: CI job **`verify`** (ktlint, detekt, unit tests, `assembleDebug`). The **`instrumented`** workflow job is a placeholder until U13.
+- Line-coverage gates (JaCoCo, ≥ 90% on `:core` simulation paths) start at **U2**, not U00.
+
 ## Testing (non-negotiable)
 
 - TDD order is mandatory. Do not write production code for a unit until new tests exist, fail for the expected reason, and are committed (`test: add failing tests for Uxx`).
