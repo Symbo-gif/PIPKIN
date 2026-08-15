@@ -11,7 +11,7 @@ Build PipKin through independently cyclable units (U1–U13). Every unit uses th
 3. **Remediation** (fix findings with regression tests; re-audit Critical/High)
 4. **Documentation** (closure log, AGENTS/rules updates, then merge to `develop`)
 
-Human lead (MichaelMaillet) approves Session 1 plans and reviews Session 2 verdicts that contain Critical findings. Merge to `develop` only after the Session 4 closure doc is committed.
+Human lead (MichaelMaillet) owns product intent in `docs/build-plan.md`. Agents write Session 1 plans before editing, record Critical audit findings in the phase-log (they block merge until remediated), and merge to `develop` only after the Session 4 closure doc is committed. Agents own git/GitHub: remotes, branch protection, PRs, and Session 4 merges.
 
 Ground truth for product behavior: `docs/build-plan.md`. Ground truth for process: `agentic-dev-methodology.md` and `GOVERNANCE.md`. Current unit status: `docs/roadmap.md`. Active session briefs: `docs/sessions/`.
 

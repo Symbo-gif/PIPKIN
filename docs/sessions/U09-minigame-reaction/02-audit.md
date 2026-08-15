@@ -37,6 +37,6 @@ Re-audit only Critical/High findings after remediation.
 
 - [ ] `docs/phase-logs/U09-minigame-reaction/U09-audit.md` committed
 - [ ] Roadmap stage = Audit (move to Remediation if any findings, else Documentation)
-- [ ] Human lead notified if any Critical finding
+- [ ] Critical findings recorded in the audit report; they block merge until remediated and re-audited
 
 Next: `03-remediation.md` if findings exist; otherwise `04-documentation.md` (U3/U4 still need re-audit note).

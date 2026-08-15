@@ -17,6 +17,6 @@ You are the **Documentation agent**. This session is the merge gate.
 4. KDoc public APIs; module README if needed.
 5. Write `docs/phase-logs/<folder>/<id>-closure.md` from `docs/templates/closure.md`.
 6. Set `docs/roadmap.md` stage to `Closed`.
-7. Stop for the human lead to merge into `develop`. Do not merge without closure.
+7. Merge the PR into `develop` with `gh pr merge`. Do not merge without closure. Do not wait for a human merge.
 
 Retrospective: 2–3 sentences in the closure file.

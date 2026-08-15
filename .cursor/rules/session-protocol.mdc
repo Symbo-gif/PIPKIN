@@ -8,9 +8,9 @@ alwaysApply: true
 Every feature unit (U1–U13 and Phase 0) runs Code & Test → Audit → Remediation → Documentation.
 
 - Read `AGENTS.md`, `GOVERNANCE.md`, `docs/build-plan.md`, the unit spec in `docs/units/`, and `docs/sessions/<unit>/0N-*.md` before editing.
-- Session 1: explore and plan first. Do not modify files until the plan is approved. Tests before implementation. Separate commits.
+- Session 1: explore and plan first. Do not modify files until the plan is written. Tests before implementation. Separate commits.
 - Session 2 must be a different agent session than Session 1. Write `docs/phase-logs/<unit>/<unit>-audit.md`.
 - Session 3 maps every finding to a fix + regression test. Critical/High block merge and need re-audit.
-- Session 4 writes `<unit>-closure.md`, updates rules/build plan if needed, then the human merges to `develop`.
+- Session 4 writes `<unit>-closure.md`, updates rules/build plan if needed, then the documentation agent merges to `develop`.
 - Do not mark a unit complete in `docs/roadmap.md` until status is `Closed`.
 - U3 and U4: mandatory Critical re-audit even when the first audit is clean.
