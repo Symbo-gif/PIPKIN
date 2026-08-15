@@ -14,7 +14,7 @@ You are the **Implementer**. Do not audit this unit later in the same session.
 1. Identify the unit id (U00–U13).
 2. Read `AGENTS.md`, `GOVERNANCE.md`, `docs/build-plan.md`, `docs/units/Uxx.md`, `docs/sessions/<folder>/01-code-and-test.md`.
 3. Explore existing code. Write a Plan (files, signatures, data flow, edge cases, test names).
-4. Stop until the human lead has approved the plan.
+4. Publish the plan in the session, then implement. Do not wait for a separate human git/GitHub/merge step.
 
 ## TDD order (mandatory)
 

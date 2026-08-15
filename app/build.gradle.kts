@@ -18,6 +18,7 @@ android {
         versionCode = 1
         versionName = "0.1.0-dev"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("int", "COMPILE_SDK", libs.versions.compileSdk.get())
     }
 
     buildTypes {
@@ -41,6 +42,7 @@ android {
 
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     packaging {

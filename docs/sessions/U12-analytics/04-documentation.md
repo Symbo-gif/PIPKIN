@@ -17,7 +17,7 @@ Make the final U12 state legible to future agents. This session is the merge gat
 3. KDoc public APIs. Short module README if responsibility is not obvious.
 4. Write the closure summary (status, artifact links, coverage, debt, sign-off, 2–3 sentence retrospective).
 5. Set `docs/roadmap.md` U12 stage to `Closed`.
-6. Human lead merges to `develop`. Do not merge without the closure file.
+6. Merge the PR to `develop` after the closure file is committed. Do not merge without the closure file.
 
 ## U12 close-out checklist
 

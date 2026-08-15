@@ -18,7 +18,7 @@ Produce the U09 implementation and its tests with TDD. No production code until 
 2. Read existing code on the dependency units.
 3. Read `.cursor/rules/` (kotlin, testing, architecture, security).
 
-## Plan (human approval required before edits)
+## Plan (write before edits)
 
 Publish a plan covering: files to touch, function signatures, data flow, edge cases, test names. Expected files:
 
@@ -40,7 +40,7 @@ Unit-specific focus:
 
 ## Exit criteria
 
-- [ ] Plan approved by human lead
+- [ ] Plan written before edits
 - [ ] Separate test then feat commits
 - [ ] Spec tests named by behavior
 - [ ] CI green

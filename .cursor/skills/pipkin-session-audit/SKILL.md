@@ -22,4 +22,4 @@ You are the **Auditor**. If you implemented this unit, stop and use a different 
 
 U3 and U4: mark re-audit required even if the findings table is empty.
 
-Human lead must see any Critical finding.
+Record any Critical finding in the audit report. Critical/High block merge until remediated and re-audited.

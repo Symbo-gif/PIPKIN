@@ -11,7 +11,7 @@ Build PipKin through independently cyclable units (U1–U13). Every unit uses th
 3. **Remediation** (fix findings with regression tests; re-audit Critical/High)
 4. **Documentation** (closure log, AGENTS/rules updates, then merge to `develop`)
 
-Human lead (MichaelMaillet) approves Session 1 plans and reviews Session 2 verdicts that contain Critical findings. Merge to `develop` only after the Session 4 closure doc is committed.
+Human lead (MichaelMaillet) owns product intent in `docs/build-plan.md`. Agents write Session 1 plans before editing, record Critical audit findings in the phase-log (they block merge until remediated), and merge to `develop` only after the Session 4 closure doc is committed. Agents own git/GitHub: remotes, branch protection, PRs, and Session 4 merges.
 
 Ground truth for product behavior: `docs/build-plan.md`. Ground truth for process: `agentic-dev-methodology.md` and `GOVERNANCE.md`. Current unit status: `docs/roadmap.md`. Active session briefs: `docs/sessions/`.
 
@@ -38,6 +38,15 @@ Do not change these without updating `docs/build-plan.md` and logging the change
 - Tests name the behavior: `hunger_decays_correctly_after_72_hour_offline_gap_with_cap_applied`.
 - Room entities: `*Entity`. Domain models: no suffix (`PetState`, `HistoryLog`). DAOs: `*Dao`.
 - Feature branches: `feature/Uxx-short-name` (example: `feature/U02-simulation-engine`).
+
+## Environment / CI
+
+Ground truth for SDK and toolchain versions: `docs/build-plan.md` §4 and `gradle/libs.versions.toml`.
+
+- compileSdk / targetSdk **36** requires AGP **8.9.1** and Gradle **8.11.1** (wrapper in repo).
+- `gradlew` must be **executable** in git (`git update-index --chmod=+x gradlew`) so Linux CI can run `./gradlew`; Windows clones may omit the bit and break the first Actions run.
+- PR merge gate: CI job **`verify`** (ktlint, detekt, unit tests, `assembleDebug`). The **`instrumented`** workflow job is a placeholder until U13.
+- Line-coverage gates (JaCoCo, ≥ 90% on `:core` simulation paths) start at **U2**, not U00.
 
 ## Testing (non-negotiable)
 

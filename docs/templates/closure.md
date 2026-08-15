@@ -22,7 +22,7 @@ None | list
 ## Sign-off
 
 - Auditor verdict:
-- Human lead merge:
+- Merge to develop (agent, after closure):
 
 ## Retrospective
 

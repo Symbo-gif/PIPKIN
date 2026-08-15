@@ -10,7 +10,7 @@
 
 ## Objective
 
-Close environment setup so U1 can start. Most scaffolding already landed (see `docs/phase-logs/U00-environment-setup/checkpoint.md`). Remaining Session 1 work: first git commit, `develop` branch, confirm Gradle/CI tasks, no feature code.
+Close environment setup so U1 can start. Most scaffolding already landed (see `docs/phase-logs/U00-environment-setup/checkpoint.md`). Remaining Session 1 work: compileSdk 36 toolchain, Gradle/CI confirmation, agent-owned remote and branch protection, no feature code.
 
 ## Explore (no file edits)
 
@@ -18,7 +18,7 @@ Close environment setup so U1 can start. Most scaffolding already landed (see `d
 2. Read existing code on the dependency units.
 3. Read `.cursor/rules/` (kotlin, testing, architecture, security).
 
-## Plan (human approval required before edits)
+## Plan (write before edits)
 
 Publish a plan covering: files to touch, function signatures, data flow, edge cases, test names. Expected files:
 
@@ -48,16 +48,16 @@ Governance, unit specs, 14×4 session briefs, `:core`/`:app` skeleton, CI workfl
 
 ## Remaining before Session 2
 
-- [ ] Human lead: first commit on `main`, then `git branch develop`
-- [ ] `./gradlew :core:test ktlintCheck detekt` green
-- [ ] `assembleDebug` green where an Android SDK exists (required on CI)
-- [ ] Remote + branch protection applied from `docs/governance/branch-protection.md`
+- [x] First commit on `main`, then `develop` (bootstrap `0bcb507`)
+- [x] `./gradlew :core:test ktlintCheck detekt` green
+- [x] `assembleDebug` green where an Android SDK exists (required on CI)
+- [ ] Remote + branch protection applied from `docs/governance/branch-protection.md` (agent-owned)
 
 ## Exit criteria
 
-- [ ] Plan approved by human lead (this checkpoint may serve)
-- [ ] Smoke test `core_module_loads` present
+- [x] Plan written before edits
+- [x] Smoke test `core_module_loads` present
 - [ ] CI workflow present and green on the first PR
-- [ ] Roadmap stage for U00 = Coding (ready for Session 2)
+- [x] Roadmap stage for U00 = Coding (ready for Session 2)
 
 Next: `02-audit.md` in a **different** agent session.

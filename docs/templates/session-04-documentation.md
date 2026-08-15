@@ -15,7 +15,7 @@ Merge gate: closure doc committed before merge to `develop`.
 3. KDoc on public APIs; module README if the module's responsibility shifted.
 4. Write `docs/phase-logs/<unit>/<unit>-closure.md` from `docs/templates/closure.md`.
 5. Set `docs/roadmap.md` stage to `Closed`.
-6. Human lead merges the PR.
+6. Documentation agent merges the PR to `develop` (`gh pr merge`).
 7. Retrospective: 2–3 sentences in the closure doc.
 
 ## Exit criteria

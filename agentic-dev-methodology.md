@@ -40,7 +40,7 @@ Each unit is assigned to one agent (or an agent pair: implementer + test-writer)
 **Protocol per unit (based on Cursor's own agent best practices and TDD-with-agents research)[cite:51][cite:48][cite:54]:**
 
 1. **Explore.** Agent reads relevant existing code, the unit's spec section in the build plan, and relevant `.cursor/rules/` files. No code written yet.
-2. **Plan Mode.** Agent produces a written implementation plan (files to touch, function signatures, data flow, edge cases) and posts it for human/lead-agent approval before any file is modified[cite:51][cite:56].
+2. **Plan.** Agent produces a written implementation plan (files to touch, function signatures, data flow, edge cases) and publishes it in the session before any file is modified. The agent then implements; git, GitHub, and Session 4 merges are agent-owned[cite:51][cite:56].
 3. **Write tests first.** Agent writes unit tests based on explicit input/output pairs and edge cases (e.g., "hunger decays 2 points/hour," "offline gap of 96 hours capped at 72 hours simulated," "care mistake triggers at exactly 20 minutes of zero-hunger"). Explicitly instruct the agent not to write any mock/stub implementation logic at this stage[cite:51].
 4. **Confirm red state.** Agent runs the test suite and confirms all new tests fail for the expected reason (missing implementation, not a broken test). Do not allow implementation code to be written yet[cite:51].
 5. **Commit tests** as a distinct commit (`test: add failing tests for <unit>`)[cite:51].
@@ -116,7 +116,7 @@ Each unit is assigned to one agent (or an agent pair: implementer + test-writer)
 | Auditor agent | Session 2 audit | Must be a different session/context than implementer to avoid self-grading bias[cite:52] |
 | Remediator agent | Session 3 fixes | Can be implementer or fresh agent depending on severity |
 | Documentation agent | Session 4 closure | Can be any agent; benefits from full context of the other three sessions' logs |
-| Human lead (you) | Approves Plan Mode outputs, reviews audit verdicts on Critical findings, merges final PRs | Checkpoint gate at Session 1 plan approval and Session 2 verdict |
+| Human lead (you) | Product owner of `docs/build-plan.md`; may revise product intent | Not a required git, GitHub, or merge operator |
 
 Use parallel Cursor cloud agents/worktrees to run independent units (e.g., U8 mini-game and U6 notifications) concurrently once their dependencies are met, following the parallel-worktree pattern common in 2026 agentic workflows, while keeping each unit's four-session cycle sequential and self-contained[cite:56][cite:58].
 

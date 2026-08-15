@@ -23,7 +23,7 @@ These values are methodology-locked. Changing them requires an explicit spec upd
 
 ## 3. Proposed mechanics (Phase 0 defaults)
 
-The methodology named hunger, care mistakes, evolution, death/rebirth, two mini-games, notifications, save slots, and analytics. The following fills remaining Tamagotchi-class gaps so units can be specified. Treat as approved defaults unless the human lead revises them before the owning unit's Session 1 plan is signed.
+The methodology named hunger, care mistakes, evolution, death/rebirth, two mini-games, notifications, save slots, and analytics. The following fills remaining Tamagotchi-class gaps so units can be specified. Treat as approved defaults unless `docs/build-plan.md` is revised before the owning unit's Session 1.
 
 ### 3.1 Meters
 
@@ -142,4 +142,5 @@ Online multiplayer, cloud saves, IAP, wearable companion, iOS, generative AI pet
 
 ## 8. Document history
 
-- 2026-08-14 — Phase 0: initial plan derived from `agentic-dev-methodology.md` with named defaults in §3. Human lead may revise §3 before the owning unit's Session 1 plan approval.
+- 2026-08-14 — Phase 0: initial plan derived from `agentic-dev-methodology.md` with named defaults in §3.
+- 2026-08-15 — U00: compile/target SDK 36 requires AGP 8.9.1 and Gradle 8.11.1. Agents own git/GitHub, branch protection, and Session 4 merges.
