@@ -21,7 +21,7 @@ A roadmap phase is done only when every listed unit is `Closed`.
 | ID | Name | Depends | Cycle stage | Session briefs | Phase logs |
 |----|------|---------|-------------|----------------|------------|
 | U00 | Repository & environment | — | Closed | [sessions](sessions/U00-environment-setup/) | [logs](phase-logs/U00-environment-setup/) |
-| U1 | Data model & Room | — | Not started | [sessions](sessions/U01-data-model/) | [logs](phase-logs/U01-data-model/) |
+| U1 | Data model & Room | — | Remediation | [sessions](sessions/U01-data-model/) | [logs](phase-logs/U01-data-model/) |
 | U2 | Decay/tick simulation | U1 | Not started | [sessions](sessions/U02-simulation-engine/) | [logs](phase-logs/U02-simulation-engine/) |
 | U3 | Offline reconciliation | U2 | Not started | [sessions](sessions/U03-offline-reconciliation/) | [logs](phase-logs/U03-offline-reconciliation/) |
 | U4 | Evolution & care mistakes | U2 | Not started | [sessions](sessions/U04-evolution-care/) | [logs](phase-logs/U04-evolution-care/) |
